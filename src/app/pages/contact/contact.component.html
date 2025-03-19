@@ -1,0 +1,66 @@
+<div class="contact-page-container">
+  <!-- Contact Form Section -->
+  <div class="contact-section">
+    <div class="contact-card">
+      <h1>Contact Us</h1>
+      <p class="contact-info">
+        Have questions or need help? Reach out to us using the form below.
+      </p>
+
+      <form (submit)="submitForm()" novalidate>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Enter your name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            rows="5"
+            placeholder="Write your message"
+            required
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn-custom">Send Message</button>
+      </form>
+
+      <div class="contact-details">
+        <h3>Get in Touch</h3>
+        <p><strong>Phone:</strong> +91 98765 43210</p>
+        <p>
+          <strong>Email:</strong>
+          <a href="mailto:support@yourservice.com"
+            >support&#64;yourservice.com</a
+          >
+        </p>
+        <p><strong>Location:</strong> 123 Service Lane, Tech City, India</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Map Section -->
+  <div class="map-section">
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345093744!2d-122.41941568468166!3d37.77492927975939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064f0d3e5e7%3A0x4b5c38c5f8c28f6!2sGoogle!5e0!3m2!1sen!2sus!4v1619828241820!5m2!1sen!2sus"
+        width="100%"
+        height="100%"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
+</div>

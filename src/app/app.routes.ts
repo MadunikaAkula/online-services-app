@@ -1,4 +1,26 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
 
-export const routes: Routes = [{ path: '', component: HomeComponent }];
+export const routes: Routes = [
+  // Root route (home page)
+  {
+    path: '',
+    loadComponent: () =>
+      import('./pages/home/home.component').then((m) => m.HomeComponent),
+  },
+
+  // Explicit home route (optional, redirects to root)
+  {
+    path: 'home',
+    redirectTo: '',
+    pathMatch: 'full',
+  },
+
+  // Contact route
+  {
+    path: 'contact',
+    loadComponent: () =>
+      import('./pages/contact/contact.component').then(
+        (m) => m.ContactComponent
+      ),
+  },
+];

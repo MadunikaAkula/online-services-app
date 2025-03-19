@@ -1,27 +1,13 @@
 <nav class="navbar">
   <div class="container">
-    <!-- Logo -->
-    <a routerLink="/" class="logo">OSF</a>
+    <a routerLink="/" class="logo" routerLinkActive="active">OSF</a>
 
-    <!-- Hamburger menu button (visible only on mobile) -->
-    <button class="hamburger" (click)="toggleMenu()">☰</button>
-
-    <!-- Navigation Links -->
-    <ul class="nav-links" [class.active]="menuOpen">
+    <ul class="nav-links">
       <li>
-        <a routerLink="/" routerLinkActive="active" (click)="closeMenu()"
-          >Home</a
-        >
+        <a (click)="router.navigate(['/'])" (click)="closeMenu()">Home</a>
       </li>
       <li>
-        <a routerLink="/" routerLinkActive="active" (click)="closeMenu()"
-          >Services</a
-        >
-      </li>
-      <li>
-        <a routerLink="/" routerLinkActive="active" (click)="closeMenu()"
-          >Contact</a
-        >
+        <a (click)="navigateToContact()" (click)="closeMenu()">Contact</a>
       </li>
     </ul>
   </div>
