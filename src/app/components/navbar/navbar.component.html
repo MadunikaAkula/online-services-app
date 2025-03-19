@@ -1,0 +1,28 @@
+<nav class="navbar">
+  <div class="container">
+    <!-- Logo -->
+    <a routerLink="/" class="logo">OSF</a>
+
+    <!-- Hamburger menu button (visible only on mobile) -->
+    <button class="hamburger" (click)="toggleMenu()">☰</button>
+
+    <!-- Navigation Links -->
+    <ul class="nav-links" [class.active]="menuOpen">
+      <li>
+        <a routerLink="/" routerLinkActive="active" (click)="closeMenu()"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a routerLink="/" routerLinkActive="active" (click)="closeMenu()"
+          >Services</a
+        >
+      </li>
+      <li>
+        <a routerLink="/" routerLinkActive="active" (click)="closeMenu()"
+          >Contact</a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,94 @@
+/* Navbar styling */
+.navbar {
+  background-color: #1a202c; /* Dark background */
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+  position: relative;
+  z-index: 10;
+}
+
+/* Container for flex layout */
+.container {
+  display: flex;
+  justify-content: space-between; /* Logo & links on opposite sides */
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Logo styling */
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #f97316; /* Orange color */
+  text-decoration: none;
+}
+
+/* Hamburger button styling */
+.hamburger {
+  display: none; /* Hidden on larger screens */
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Navigation links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 40px; /* Space between nav items */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+/* Hover and active effects */
+.nav-links a:hover,
+.nav-links a.active {
+  color: #f97316; /* Orange on hover */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block; /* Show hamburger on small screens */
+  }
+
+  .nav-links {
+    display: none; /* Hidden by default on mobile */
+    flex-direction: column; /* Vertical layout */
+    gap: 20px; /* Smaller gap on mobile */
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: #1a202c; /* Dark background */
+    z-index: 9;
+    padding: 20px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  /* Show menu when active */
+  .nav-links.active {
+    display: flex; /* Show the menu */
+  }
+
+  .nav-links a {
+    font-size: 1.5rem; /* Larger links on mobile */
+  }
+}
