@@ -139,3 +139,180 @@
     height: 180px; /* Smaller image for small screens */
   }
 }
+/* Half-Screen Modal */
+.half-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8); /* Dark overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Modal Content */
+.half-modal-content {
+  width: 50vw;
+  height: 60vh;
+  background: white; /* Clean white header */
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  animation: slideIn 0.5s ease;
+}
+
+/* Modal Entrance Animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  right: 20px;
+  font-size: 30px;
+  color: #555; /* Dark gray close icon */
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.close-btn:hover {
+  transform: rotate(90deg);
+}
+
+/* Scrollable Content */
+.half-modal-scrollable {
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+/* Hide scrollbar for WebKit browsers */
+.half-modal-scrollable::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+/* Sub-Service Styling */
+.sub-service {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 25px;
+  border-bottom: 1px solid #eee; /* Light border */
+  background: #f8f9fa; /* Subtle background */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover Effect */
+.sub-service:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Styling */
+.sub-service img {
+  width: 160px; /* Consistent width */
+  height: 160px; /* Consistent height */
+  object-fit: cover; /* Fit image perfectly */
+  border-radius: 12px; /* Rounded corners */
+  transition: transform 0.3s;
+}
+
+/* Image Hover */
+.sub-service:hover img {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Sub-Service Details */
+.sub-details {
+  flex: 1;
+}
+
+.sub-details h4 {
+  font-size: 22px;
+  color: #2c3e50; /* Dark blue header */
+  margin: 0;
+}
+
+.sub-details p {
+  color: #555;
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+/* Price Styling */
+.price {
+  font-size: 20px;
+  color: #27ae60; /* Green price */
+  font-weight: bold;
+}
+
+/* Star Rating */
+.rating {
+  color: #ffd700; /* Gold stars */
+  font-size: 20px;
+}
+
+/* Confirm Booking Link */
+.confirm-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 25px;
+  background: linear-gradient(
+    135deg,
+    #4caf50,
+    #2196f3
+  ); /* Green to blue gradient */
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: transform 0.3s, background 0.3s;
+  text-align: center;
+}
+
+/* Confirm Link Hover Effect */
+.confirm-link:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #2196f3, #4caf50);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .half-modal-content {
+    width: 90vw;
+    height: 70vh;
+  }
+
+  .sub-service {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sub-service img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+
+  .confirm-link {
+    width: 100%;
+    text-align: center;
+  }
+}

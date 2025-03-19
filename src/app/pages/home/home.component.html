@@ -7,7 +7,8 @@
       >
     </h1>
   </div>
-  <!-- Placeholder for content below -->
+
+  <!-- Content -->
   <p class="content">
     Discover top-rated services tailored to your needs. Book now and experience
     the best!
@@ -23,7 +24,6 @@
       *ngFor="let service of services"
     >
       <div class="card shadow-sm h-100">
-        <!-- Image with fixed height -->
         <img
           [src]="service.image"
           class="card-img-top fixed-img"
@@ -32,7 +32,51 @@
         <div class="card-body text-center">
           <h5 class="card-title">{{ service.name }}</h5>
           <p class="card-text">{{ service.description }}</p>
-          <button class="btn btn-custom">Book Now</button>
+          <button class="btn btn-custom" (click)="openModal(service)">
+            More Details
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Half-Screen Modal -->
+  <div class="half-modal" *ngIf="isModalOpen" (click)="closeModal()">
+    <div class="half-modal-content" (click)="$event.stopPropagation()">
+      <span class="close-btn" (click)="closeModal()">&times;</span>
+      <h2>{{ selectedService?.name }}</h2>
+
+      <!-- Scrollable Content -->
+      <div class="half-modal-scrollable">
+        <div
+          *ngFor="let sub of selectedService?.subServices"
+          class="sub-service"
+        >
+          <img [src]="sub.image" [alt]="sub.title" />
+          <div class="sub-details">
+            <h4>{{ sub.title }}</h4>
+            <p>{{ sub.description }}</p>
+            <p class="price">
+              Price: <strong>₹{{ sub.price }}</strong>
+            </p>
+            <div class="rating">
+              <span
+                *ngFor="let star of getStars(sub.rating)"
+                class="star"
+                [class.filled]="star <= sub.rating"
+                >★</span
+              >
+            </div>
+            <!-- Confirm Booking Button -->
+            <!-- Confirm Booking Link -->
+            <a
+              [href]="'/booking/' + sub.title"
+              class="confirm-link"
+              target="_blank"
+            >
+              Confirm Booking
+            </a>
+          </div>
         </div>
       </div>
     </div>
