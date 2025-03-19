@@ -1,1 +1,40 @@
-<p>home works!</p>
+<div class="home-container">
+  <!-- Title -->
+  <div class="typing-wrapper">
+    <h1 class="typing-title">
+      <span class="typing-text"
+        >Book Your Services and Create Happy Bookings</span
+      >
+    </h1>
+  </div>
+  <!-- Placeholder for content below -->
+  <p class="content">
+    Discover top-rated services tailored to your needs. Book now and experience
+    the best!
+  </p>
+  <button class="btn btn-custom" (click)="scrollToServices()">
+    Our Services
+  </button>
+
+  <!-- Service Cards Section -->
+  <div class="row justify-content-center mt-5" id="services" #servicesSection>
+    <div
+      class="col-lg-4 col-md-6 col-sm-12 mb-4"
+      *ngFor="let service of services"
+    >
+      <div class="card shadow-sm h-100">
+        <!-- Image with fixed height -->
+        <img
+          [src]="service.image"
+          class="card-img-top fixed-img"
+          [alt]="service.name"
+        />
+        <div class="card-body text-center">
+          <h5 class="card-title">{{ service.name }}</h5>
+          <p class="card-text">{{ service.description }}</p>
+          <button class="btn btn-custom">Book Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

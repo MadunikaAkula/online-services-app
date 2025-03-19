@@ -1,0 +1,141 @@
+/* Style container */
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Typing Effect Container */
+.typing-wrapper {
+  min-height: 120px; /* Ensures space for multiple lines */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Center text for mobile devices */
+  padding: 0 20px; /* Add some padding for smaller screens */
+}
+
+/* Typing Effect */
+.typing-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #f97316;
+  white-space: nowrap; /* Prevent wrapping on larger screens */
+  overflow: hidden;
+  border-right: 0.15em solid #f97316;
+  width: 0;
+  animation: typing 4s steps(60, end) forwards, blink 0.8s infinite;
+}
+
+/* Blinking Cursor Animation */
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* Typing Animation */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Ensure the text wraps properly on smaller screens */
+@media screen and (max-width: 768px) {
+  .typing-title {
+    font-size: 1.8rem; /* Smaller font size for mobile */
+    white-space: normal; /* Allow text wrapping */
+    width: auto; /* Use auto width for wrapping */
+    border-right: none; /* Hide cursor on mobile */
+  }
+
+  .typing-wrapper {
+    min-height: 160px; /* Increase height for multiline text */
+    padding: 0 10px; /* Add padding for smaller screens */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .typing-title {
+    font-size: 1.5rem; /* Even smaller font for tiny screens */
+  }
+}
+
+/* Content paragraph */
+.content {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* Custom button styling */
+.btn-custom {
+  background-color: #f97316;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.btn-custom:hover {
+  background-color: #e05a00;
+}
+
+/* Cards styling */
+.card {
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Fixed image height and object fit to ensure consistent size */
+.fixed-img {
+  height: 250px; /* Fixed height */
+  object-fit: cover; /* Ensures consistent display */
+  width: 100%; /* Full width */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 992px) {
+  .home-container {
+    padding: 15px;
+  }
+
+  .main-title {
+    font-size: 2rem;
+  }
+
+  .btn-custom {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+  }
+
+  .fixed-img {
+    height: 200px; /* Smaller image for mobile */
+  }
+}
+
+@media (max-width: 576px) {
+  .main-title {
+    font-size: 1.8rem;
+  }
+
+  .btn-custom {
+    padding: 8px 18px;
+    font-size: 0.85rem;
+  }
+
+  .fixed-img {
+    height: 180px; /* Smaller image for small screens */
+  }
+}
