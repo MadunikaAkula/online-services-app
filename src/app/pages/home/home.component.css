@@ -159,7 +159,6 @@
   width: 50vw;
   height: 60vh;
   background: white; /* Clean white header */
-  border-radius: 20px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   display: flex;
@@ -230,7 +229,6 @@
   width: 160px; /* Consistent width */
   height: 160px; /* Consistent height */
   object-fit: cover; /* Fit image perfectly */
-  border-radius: 12px; /* Rounded corners */
   transition: transform 0.3s;
 }
 
@@ -242,6 +240,7 @@
 /* Sub-Service Details */
 .sub-details {
   flex: 1;
+  text-align: left;
 }
 
 .sub-details h4 {
@@ -273,24 +272,10 @@
 .confirm-link {
   display: inline-block;
   margin-top: 10px;
-  padding: 12px 25px;
-  background: linear-gradient(
-    135deg,
-    #4caf50,
-    #2196f3
-  ); /* Green to blue gradient */
-  color: white;
+  background: transparent;
+  color: crimson;
   font-weight: bold;
-  text-decoration: none;
-  border-radius: 25px;
-  transition: transform 0.3s, background 0.3s;
-  text-align: center;
-}
-
-/* Confirm Link Hover Effect */
-.confirm-link:hover {
-  transform: scale(1.1);
-  background: linear-gradient(135deg, #2196f3, #4caf50);
+  text-decoration: underline;
 }
 
 /* Responsive Design */
