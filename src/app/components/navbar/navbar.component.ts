@@ -7,9 +7,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent {
-  constructor(public router: Router) {}
-
   menuOpen: boolean = false;
+
+  constructor(public router: Router) {}
 
   // Toggle the hamburger menu
   toggleMenu() {
@@ -21,7 +21,14 @@ export class NavbarComponent {
     this.menuOpen = false;
   }
 
+  // Navigation Methods
+  navigateToHome() {
+    this.router.navigate(['/']);
+    this.closeMenu();
+  }
+
   navigateToContact() {
     this.router.navigate(['/contact']);
+    this.closeMenu();
   }
 }
