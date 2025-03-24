@@ -1,18 +1,27 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-  // Root route (home page)
+  // Redirect the root to the login page
   {
     path: '',
-    loadComponent: () =>
-      import('./pages/home/home.component').then((m) => m.HomeComponent),
+    redirectTo: '/register',
+    pathMatch: 'full',
   },
 
-  // Explicit home route (optional, redirects to root)
+  // Login Route
+  {
+    path: 'register',
+    loadComponent: () =>
+      import('./pages/register/register.component').then(
+        (m) => m.RegisterComponent
+      ),
+  },
+
+  // Home Route
   {
     path: 'home',
-    redirectTo: '',
-    pathMatch: 'full',
+    loadComponent: () =>
+      import('./pages/home/home.component').then((m) => m.HomeComponent),
   },
 
   // Contact route
@@ -23,7 +32,8 @@ export const routes: Routes = [
         (m) => m.ContactComponent
       ),
   },
-  //confirm-booking
+
+  // Confirm Booking
   {
     path: 'confirm-booking',
     loadComponent: () =>
@@ -31,11 +41,27 @@ export const routes: Routes = [
         (m) => m.ConfirmBookingComponent
       ),
   },
+
+  // Service Availability
   {
     path: 'service-availability',
     loadComponent: () =>
       import('./pages/verify-address/verify-address.component').then(
         (m) => m.VerifyAddressComponent
+      ),
+  },
+
+  // Register Route
+  {
+    path: 'login',
+    loadComponent: () =>
+      import('./pages/login/login.component').then((m) => m.LoginComponent),
+  },
+  {
+    path: '**',
+    loadComponent: () =>
+      import('./pages/not-found/not-found.component').then(
+        (m) => m.NotFoundComponent
       ),
   },
 ];

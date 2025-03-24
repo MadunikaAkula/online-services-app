@@ -1,0 +1,94 @@
+<div class="login-container">
+  <!-- Left Section with Centered Content -->
+  <div class="left-section">
+    <div class="content-wrapper">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRG0SUV4Jp6Ys4R-aRbJRww4t4e_7AKtbctQ&s"
+        alt="OSF Logo"
+        class="logo"
+      />
+
+      <h1 class="signup-title">Signup to OSF</h1>
+
+      <!-- Social Icons -->
+      <div class="social-icons">
+        <div class="circle">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtfbcYeYgf0wQJ-LSPm3CPbyB7T1p0f5bnaA&s"
+            alt="Facebook"
+            (click)="onSignup()"
+          />
+        </div>
+        <div class="circle">
+          <img
+            src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png"
+            alt="Google"
+            (click)="onSignup()"
+          />
+        </div>
+        <div class="circle">
+          <img
+            src="https://i.pinimg.com/736x/1e/c1/1a/1ec11a869384bc5e59625bac39b6a099.jpg"
+            alt="Apple"
+            (click)="onSignup()"
+          />
+        </div>
+      </div>
+
+      <div class="divider">
+        ----------------- or do via mail -----------------
+      </div>
+
+      <!-- Form Fields -->
+      <form novalidate>
+        <div class="form-group">
+          <label for="fname">Full Name</label>
+          <input
+            type="text"
+            id="fname"
+            placeholder="Enter your full name"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            required
+          />
+        </div>
+
+        <button (click)="onSignup()" type="button" class="btn-signup">
+          Sign Up
+        </button>
+
+        <div class="signin-link">
+          Already have an account?
+          <a routerLink="/login" (click)="onSignIn()">Sign in</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Right Section with Full Image -->
+  <div class="right-section">
+    <img
+      src="https://thumbs.dreamstime.com/b/technical-support-customer-service-business-technology-internet-concept-100232431.jpg"
+      alt="Background Image"
+      class="full-image"
+    />
+  </div>
+</div>
