@@ -1,5 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   imports: [CommonModule],
@@ -7,6 +8,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
+  constructor(public router: Router) {}
+
   @ViewChild('servicesSection') servicesSection!: ElementRef;
   isModalOpen = false;
   selectedService: any = null;
@@ -111,11 +114,7 @@ export class HomeComponent {
   getStars(rating: number): number[] {
     return Array.from({ length: 5 }, (_, i) => i + 1);
   }
-  confirmBooking(subService: any) {
-    console.log(`Booking confirmed for: ${subService.title}`);
-    alert(`Booking confirmed for: ${subService.title}`);
-
-    // TODO: You can add logic to send this data to your backend
-    // e.g., send booking data via an API request
+  serviceAvailability() {
+    this.router.navigate(['/service-availability']);
   }
 }

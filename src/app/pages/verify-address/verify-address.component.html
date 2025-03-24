@@ -1,0 +1,57 @@
+<div class="verify-container">
+  <!-- Map Section -->
+  <div class="map-section">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345093744!2d-122.41941568468166!3d37.77492927975939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064f0d3e5e7%3A0x4b5c38c5f8c28f6!2sGoogle!5e0!3m2!1sen!2sus!4v1619828241820!5m2!1sen!2sus"
+      width="100%"
+      height="100%"
+      style="border: 0"
+      allowfullscreen=""
+      loading="lazy"
+    ></iframe>
+  </div>
+
+  <!-- Pincode Form Section -->
+  <div class="form-section">
+    <h2>Verify Your Address</h2>
+
+    <form (submit)="verifyAddress($event)" novalidate>
+      <div class="form-group">
+        <label for="pincode">Enter Pincode</label>
+        <input
+          type="text"
+          id="pincode"
+          [(ngModel)]="userPincode"
+          name="pincode"
+          placeholder="Enter your pincode"
+          required
+          pattern="[0-9]{6}"
+        />
+      </div>
+
+      <!-- Availability Message -->
+      <div
+        *ngIf="availability !== null"
+        class="status-message"
+        [ngClass]="{ available: availability, unavailable: !availability }"
+      >
+        <p *ngIf="availability">✅ Service is available in your area!</p>
+        <p *ngIf="!availability">
+          ❌ Sorry, service is not available in your area.
+        </p>
+      </div>
+
+      <button type="submit" class="btn-verify" [disabled]="loading">
+        {{ loading ? "Verifying..." : "Check Availability" }}
+      </button>
+
+      <button
+        *ngIf="availability"
+        class="btn-proceed"
+        (click)="proceedToBooking()"
+      >
+        Proceed to Booking
+      </button>
+    </form>
+  </div>
+</div>

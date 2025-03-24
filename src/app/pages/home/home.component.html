@@ -68,11 +68,11 @@
             <!-- Confirm Booking Button -->
             <!-- Confirm Booking Link -->
             <a
-              [href]="'/booking/' + sub.title"
+              (click)="serviceAvailability()"
               class="confirm-link"
               target="_blank"
             >
-              Confirm Booking
+              service availability
             </a>
           </div>
         </div>

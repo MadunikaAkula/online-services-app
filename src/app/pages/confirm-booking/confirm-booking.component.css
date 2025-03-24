@@ -1,0 +1,243 @@
+/* Global Container */
+.booking-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+  padding: 60px 20px;
+  color: #333;
+}
+
+/* Booking Card */
+.booking-card {
+  display: flex;
+  flex-direction: row; /* Side by side on larger screens */
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect */
+.booking-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Left Section: Service Image & Details */
+.left-section {
+  width: 50%;
+  background: #f7f7f7;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.service-info {
+  text-align: center;
+}
+
+.service-info h2 {
+  font-size: 28px;
+  color: #1a202c;
+}
+
+.service-info p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.service-details p {
+  font-size: 18px;
+  color: #333;
+  margin: 5px 0;
+}
+
+/* Right Section: Booking Form */
+.right-section {
+  width: 50%;
+  padding: 40px;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  color: #555;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #f97316;
+  box-shadow: 0 0 10px rgba(249, 115, 22, 0.4);
+}
+
+/* Payment Options */
+.payment-section h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.payment-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.payment-options label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.payment-options img {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+}
+
+/* Confirm Button */
+.btn-confirm {
+  display: inline-block;
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  color: white;
+  background: #f97316;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-confirm:hover {
+  background: #f97316cc;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #1a202c;
+  color: #fff;
+  font-size: 14px;
+}
+
+/* ✅ Responsive Design */
+
+/* On smaller screens: stack vertically */
+@media (max-width: 992px) {
+  .booking-card {
+    flex-direction: column;
+  }
+
+  .left-section,
+  .right-section {
+    width: 100%;
+    padding: 30px;
+  }
+
+  .service-image {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .left-section,
+  .right-section {
+    padding: 20px;
+  }
+
+  .service-info h2,
+  h2 {
+    font-size: 22px;
+  }
+
+  .btn-confirm {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-image {
+    max-height: 200px;
+  }
+
+  .form-group input {
+    padding: 10px;
+  }
+
+  .btn-confirm {
+    font-size: 14px;
+    padding: 12px;
+  }
+}
+/* Alert Styling */
+.custom-alert {
+  position: relative;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Close Button Styling */
+.custom-close-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.custom-close-btn:hover {
+  color: #ff4d4d; /* Hover color */
+}
+
+/* Smooth fade-out animation */
+.custom-alert.fade-out {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
