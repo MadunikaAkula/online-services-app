@@ -23,4 +23,19 @@ export const routes: Routes = [
         (m) => m.ContactComponent
       ),
   },
+  //confirm-booking
+  {
+    path: 'confirm-booking',
+    loadComponent: () =>
+      import('./pages/confirm-booking/confirm-booking.component').then(
+        (m) => m.ConfirmBookingComponent
+      ),
+  },
+  {
+    path: 'service-availability',
+    loadComponent: () =>
+      import('./pages/verify-address/verify-address.component').then(
+        (m) => m.VerifyAddressComponent
+      ),
+  },
 ];

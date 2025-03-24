@@ -3,3 +3,20 @@
   min-height: calc(100vh - 80px);
   background: #f3f4f6;
 }
+/* Footer */
+.footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px 0;
+  color: #555;
+  background: #f0f0f0;
+}
+
+.footer a {
+  color: #f97316;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
